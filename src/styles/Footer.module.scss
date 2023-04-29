@@ -1,0 +1,17 @@
+@import 'utils/variables';
+
+.footer {
+  color: map-get($font-color, primary);
+  background-color: map-get($background-color, primary);
+  width: 117px;
+
+  p {
+    transform-origin: center bottom;
+    transform: rotate(-90deg) translate(100%, 2%);
+    white-space: nowrap;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

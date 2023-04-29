@@ -1,8 +1,6 @@
 import styles from '@/styles/Dashboard.module.scss'
 import Head from 'next/head'
 
-
-
 export async function getStaticPaths() {
   return {
     paths: [{ params: { id: '12' } }],
@@ -17,12 +15,12 @@ export async function getStaticProps({ params }) {
   const user = (await res.json()).data
 
   // of no data redirect to 404 route
-  if (res.status === 404 ) return { notFound: true }
+  if (res.status === 404) return { notFound: true }
   // Pass post data to the page via props
   return { props: { user }, revalidate: 10 }
 }
 
-export default function Dashboard({user}) {
+export default function Dashboard({ user }) {
   console.log(user)
   return (
     <>
@@ -30,9 +28,9 @@ export default function Dashboard({user}) {
         <title>Dashboard - SportSee</title>
         <meta name="description" content="Dashboard" />
       </Head>
-      <main className={styles.main}>
+      <section className={styles.section}>
         <p>Dashboard</p>
-      </main>
+      </section>
     </>
   )
 }

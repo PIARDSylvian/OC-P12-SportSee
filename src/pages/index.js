@@ -9,10 +9,10 @@ export default function Home() {
         <title>SportSee</title>
         <meta name="description" content="coaching sportif" />
       </Head>
-      <main className={styles.main}>
+      <section className={styles.home}>
         <Link href="/12">Karl Dovineau</Link>
         <Link href="/18">Cecilia Ratorez</Link>
-      </main>
+      </section>
     </>
   )
 }

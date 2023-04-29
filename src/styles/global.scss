@@ -1,0 +1,36 @@
+@import 'reset-css/sass/reset';
+@import 'utils/variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
+
+* {
+  font-family: 'Roboto' !important;
+}
+
+a,
+a:visited {
+  color: map-get($font-color, primary);
+  text-decoration: none;
+}
+
+#__next {
+  height: 100vh;
+  min-height: 780px;
+  width: 100%;
+  min-width: 1024px;
+
+  main {
+    display: flex;
+    height: calc(100% - $navbar-height);
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 117px;
+    }
+
+    & > section {
+      width: 100%;
+    }
+  }
+}
