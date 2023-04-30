@@ -4,9 +4,10 @@
 
 create .env.local file
 add in file :
-BACKEND to set backend ULR & port
+NEXT_PUBLIC_BACKEND to set backend ULR & port
 
 ## How to start dev server
+
 ```bash
 npm run dev
 # or
@@ -16,6 +17,7 @@ pnpm dev
 ```
 
 ## How to start prod server
+
 ```bash
 npm run build
 npm run start
