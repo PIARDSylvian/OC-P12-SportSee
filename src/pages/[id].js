@@ -1,9 +1,10 @@
 import styles from '@/styles/Dashboard.module.scss'
 import Head from 'next/head'
+import Card from '../components/card'
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { id: '12' } }],
+    paths: [{ params: { id: '12' } }, { params: { id: '18' } }],
     fallback: true,
   }
 }
@@ -28,8 +29,17 @@ export default function Dashboard({ user }) {
         <title>Dashboard - SportSee</title>
         <meta name="description" content="Dashboard" />
       </Head>
-      <section className={styles.section}>
-        <p>Dashboard</p>
+      <section className={styles.dashboard}>
+        <h1>
+          Bonjour, <span>{user.userInfos.firstName}</span>
+        </h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <article className={styles.informations}>
+          <Card type="calories" value={user.keyData.calorieCount} />
+          <Card type="proteins" value={user.keyData.proteinCount} />
+          <Card type="glucides" value={user.keyData.carbohydrateCount} />
+          <Card type="lipides" value={user.keyData.lipidCount} />
+        </article>
       </section>
     </>
   )

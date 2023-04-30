@@ -1,0 +1,26 @@
+@import 'utils/variables';
+
+.dashboard {
+  margin: 60px 100px;
+  height: calc(100% - 120px);
+
+  & > h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+
+    span {
+      color: map-get($font-color, ternary);
+    }
+  }
+
+  & > p {
+    margin-bottom: 40px;
+  }
+
+  .informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+  }
+}
