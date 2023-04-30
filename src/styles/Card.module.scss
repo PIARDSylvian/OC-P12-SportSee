@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 258px;
-  height: 124px;
+  min-width: 258px;
+  min-height: 124px;
   background-color: map-get($background-color, ternary);
   border-radius: $border-radius;
 
