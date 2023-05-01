@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Card from '@/components/card'
 import BarChart from '@/components/barChart'
 import { getUser } from '@/utils'
+import PropTypes from 'prop-types'
 
 export async function getStaticPaths() {
   return {
@@ -14,6 +15,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
   const user = await getUser(params.id)
+
+  console.log(user)
 
   // of no data redirect to 404 route
   if (!user) return { notFound: true }
@@ -62,4 +65,22 @@ export default function Dashboard({ user }) {
       </>
     )
   }
+}
+
+Dashboard.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userInfos: PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+      age: PropTypes.number.isRequired,
+    }),
+    todayScore: PropTypes.number.isRequired,
+    keyData: PropTypes.shape({
+      calorieCount: PropTypes.number.isRequired,
+      proteinCount: PropTypes.number.isRequired,
+      carbohydrateCount: PropTypes.number.isRequired,
+      lipidCount: PropTypes.number.isRequired,
+    }),
+  }),
 }
