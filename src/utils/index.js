@@ -1,4 +1,5 @@
 import User from '@/entities/user'
+import Activity from '@/entities/activity'
 
 export const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -23,4 +24,5 @@ export async function getActivity(id) {
   return await fetch(`${process.env.BACKEND}/user/${id}/activity`)
     .then((res) => res.json())
     .then((res) => res.data)
+    .then((res) => new Activity(res).data())
 }
