@@ -92,7 +92,7 @@ export default function BarChartComponent({ id }) {
         barSize={10}
         style={{ backgroundColor: '#FBFBFB' }}
       >
-        <CartesianGrid strokeDasharray="5" vertical={false} />
+        <CartesianGrid strokeDasharray="2" vertical={false} />
         <XAxis
           domain={['dataMin', 'dataMax']}
           tickLine={false}
