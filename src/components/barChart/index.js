@@ -11,15 +11,6 @@ import {
 } from 'recharts'
 import { fetcher, getApiRoute } from '@/utils'
 
-// NOTA
-// export function getApiActivity(userId) {
-//   const baseUrl = `http://localhost:3000/user/${userId}/activity`;
-
-//   return fetch(baseUrl)
-//     .then((data) => data.json())
-//     .then((dataJson) => new UserActivity(dataJson));
-// }
-
 export default function BarChartComponent({ id }) {
   const { data, error } = useSWR(getApiRoute(id, 'activity'), fetcher)
 
