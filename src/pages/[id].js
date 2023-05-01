@@ -16,8 +16,6 @@ export async function getStaticProps({ params }) {
   // params contains the post `id`.
   const user = await getUser(params.id)
 
-  console.log(user)
-
   // of no data redirect to 404 route
   if (!user) return { notFound: true }
   // Pass post data to the page via props
@@ -75,7 +73,8 @@ Dashboard.propTypes = {
       lastName: PropTypes.string.isRequired,
       age: PropTypes.number.isRequired,
     }),
-    todayScore: PropTypes.number.isRequired,
+    todayScore: PropTypes.number,
+    score: PropTypes.number,
     keyData: PropTypes.shape({
       calorieCount: PropTypes.number.isRequired,
       proteinCount: PropTypes.number.isRequired,
