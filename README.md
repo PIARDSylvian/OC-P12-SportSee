@@ -4,7 +4,7 @@
 
 create .env.local file
 add in file :
-NEXT_PUBLIC_BACKEND to set backend ULR & port
+BACKEND to set backend URL & port
 
 ## How to start dev server
 
