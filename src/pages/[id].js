@@ -1,7 +1,8 @@
 import styles from '@/styles/Dashboard.module.scss'
 import Head from 'next/head'
 import Card from '@/components/card'
-import BarChart from '@/components/barChart'
+import BarChartComponent from '@/components/barChart'
+import LineChartComponent from '@/components/lineChart'
 import { getUser } from '@/utils'
 import PropTypes from 'prop-types'
 
@@ -38,17 +39,17 @@ export default function Dashboard({ user }) {
           <div className={styles.wrapper}>
             <div className={styles['graph-wrapper']}>
               <article className={styles.graph}>
-                <BarChart id={user.id} />
+                <BarChartComponent id={user.id} />
               </article>
               <div>
                 <article className={styles.graph}>
-                  <BarChart id={user.id} />
+                  <LineChartComponent id={user.id} />
                 </article>
                 <article className={styles.graph}>
-                  <BarChart id={user.id} />
+                  <LineChartComponent id={user.id} />
                 </article>
                 <article className={styles.graph}>
-                  <BarChart id={user.id} />
+                  <LineChartComponent id={user.id} />
                 </article>
               </div>
             </div>

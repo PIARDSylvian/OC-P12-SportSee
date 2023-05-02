@@ -86,7 +86,6 @@ export default function BarChartComponent({ id }) {
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
         data={data.sessions}
-        title="Chart of PU x UV"
         margin={{
           top: 35,
           left: 40,
