@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { fetcher, getApiRoute } from '@/utils'
+import PropTypes from 'prop-types'
 
 export default function BarChartComponent({ id }) {
   const { data, error } = useSWR(getApiRoute(id, 'activity'), fetcher)
@@ -134,4 +135,15 @@ export default function BarChartComponent({ id }) {
       </BarChart>
     </ResponsiveContainer>
   )
+}
+
+BarChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      calories: PropTypes.number.isRequired,
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      step: PropTypes.number.isRequired,
+    }).isRequired
+  ),
 }
