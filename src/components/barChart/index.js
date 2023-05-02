@@ -22,7 +22,10 @@ export default function BarChartComponent({ id }) {
       return (
         <div
           className="custom-tooltip"
-          style={{ backgroundColor: `${payload[1].fill}`, color: '#fff' }}
+          style={{
+            backgroundColor: `${payload[1].fill}`,
+            color: '#fff',
+          }}
         >
           <p
             className="label"
@@ -94,7 +97,7 @@ export default function BarChartComponent({ id }) {
       >
         <CartesianGrid strokeDasharray="2" vertical={false} />
         <XAxis
-          domain={['dataMin', 'dataMax']}
+          dataKey={'step'}
           tickLine={false}
           scale="point"
           padding={{ left: 10, right: 10 }}
