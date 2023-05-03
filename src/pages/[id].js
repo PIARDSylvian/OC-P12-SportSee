@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Card from '@/components/card'
 import BarChartComponent from '@/components/barChart'
 import LineChartComponent from '@/components/lineChart'
+import RadarChartComponent from '@/components/radarChart'
 import { getUser } from '@/utils'
 import PropTypes from 'prop-types'
 
@@ -46,10 +47,10 @@ export default function Dashboard({ user }) {
                   <LineChartComponent id={user.id} />
                 </article>
                 <article className={styles.graph}>
-                  <LineChartComponent id={user.id} />
+                  <RadarChartComponent id={user.id} />
                 </article>
                 <article className={styles.graph}>
-                  <LineChartComponent id={user.id} />
+                  <RadarChartComponent id={user.id} />
                 </article>
               </div>
             </div>

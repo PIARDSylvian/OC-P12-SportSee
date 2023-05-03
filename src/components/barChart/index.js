@@ -93,7 +93,7 @@ export default function BarChartComponent({ id }) {
           bottom: 10,
         }}
         barSize={10}
-        style={{ backgroundColor: '#FBFBFB' }}
+        style={{ backgroundColor: '#FBFBFB', borderRadius: '5px' }}
       >
         <CartesianGrid strokeDasharray="2" vertical={false} />
         <XAxis

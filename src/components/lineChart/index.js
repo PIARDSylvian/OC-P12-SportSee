@@ -44,7 +44,7 @@ export default function LineChartComponent({ id }) {
     return (
       <p
         style={{
-          padding: '20px 0 0 20px',
+          padding: '10% 0 0 10%',
           fontSize: '14px',
           color: '#fff',
         }}
@@ -76,7 +76,11 @@ export default function LineChartComponent({ id }) {
           right: 15,
           bottom: 15,
         }}
-        style={{ backgroundColor: '#FF0000', color: '#FFF' }}
+        style={{
+          backgroundColor: '#FF0000',
+          color: '#FFF',
+          borderRadius: '5px',
+        }}
       >
         <Tooltip content={renderTooltip} cursor={<CustomCursor />} />
         <XAxis
