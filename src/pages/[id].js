@@ -4,12 +4,13 @@ import Card from '@/components/card'
 import BarChartComponent from '@/components/barChart'
 import LineChartComponent from '@/components/lineChart'
 import RadarChartComponent from '@/components/radarChart'
+import RadialBarChartComponent from '@/components/RadialBarChart'
 import { getUser } from '@/utils'
 import PropTypes from 'prop-types'
 
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { id: '12' } }, { params: { id: '18' } }],
+    paths: [{ params: { id: '12' } }],
     fallback: true,
   }
 }
@@ -50,7 +51,10 @@ export default function Dashboard({ user }) {
                   <RadarChartComponent id={user.id} />
                 </article>
                 <article className={styles.graph}>
-                  <RadarChartComponent id={user.id} />
+                  <RadialBarChartComponent
+                    score={user.score}
+                    todayScore={user.todayScore}
+                  />
                 </article>
               </div>
             </div>
