@@ -12,13 +12,14 @@ import haltere from '../../../public/haltere.png'
 
 export default function Layout({ children }) {
   const router = useRouter()
+  console.log(children.props.statusCode)
   return (
     <>
       <Navbar>
         <Link href="/" className="logo">
           <Image src={logo} alt="SportSee-logo" priority="false" />
         </Link>
-        {router.query.id && (
+        {router.query.id && children.props.statusCode !== 404 && (
           <ul>
             <li>
               <Link href="/">Accueil</Link>
@@ -38,7 +39,7 @@ export default function Layout({ children }) {
       <main>
         <div>
           <Navbar column>
-            {router.query.id && (
+            {router.query.id && children.props.statusCode !== 404 && (
               <ul>
                 <li>
                   <Link href="/">
