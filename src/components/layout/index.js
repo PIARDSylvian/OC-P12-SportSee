@@ -12,7 +12,6 @@ import haltere from '../../../public/haltere.png'
 
 export default function Layout({ children }) {
   const router = useRouter()
-  console.log(children.props.statusCode)
   return (
     <>
       <Navbar>

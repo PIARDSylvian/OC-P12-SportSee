@@ -15,8 +15,6 @@ export default function RadarChartComponent({ id }) {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  console.log(data)
-
   function customTick({ payload, x, y, textAnchor, fill, radius }) {
     return (
       <g className="recharts-layer recharts-polar-angle-axis-tick">
