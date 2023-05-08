@@ -1,11 +1,12 @@
 import styles from '@/styles/Card.module.scss'
 import Image from 'next/image'
-import lipides from '../../../public/lipides.png'
-import calories from '../../../public/calories.png'
-import proteins from '../../../public/proteins.png'
-import glucides from '../../../public/glucides.png'
+import lipides from '@/../public/lipides.png'
+import calories from '@/../public/calories.png'
+import proteins from '@/../public/proteins.png'
+import glucides from '@/../public/glucides.png'
+import PropTypes from 'prop-types'
 
-function CardType(type, value) {
+function getCardByType(type, value) {
   switch (type) {
     case 'calories':
       return (
@@ -53,5 +54,10 @@ function CardType(type, value) {
 }
 
 export default function Card({ type, value }) {
-  return <div className={styles.card}>{CardType(type, value)}</div>
+  return <div className={styles.card}>{getCardByType(type, value)}</div>
+}
+
+Card.propTypes = {
+  type: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 }

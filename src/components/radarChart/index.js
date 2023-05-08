@@ -62,6 +62,10 @@ export default function RadarChartComponent({ id }) {
   )
 }
 
+RadarChartComponent.propTypes = {
+  id: PropTypes.number.isRequired,
+}
+
 RadarChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

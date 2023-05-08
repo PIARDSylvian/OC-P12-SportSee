@@ -4,11 +4,12 @@ import Button from '../button'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../../public/logo.png'
-import yoga from '../../../public/yoga.png'
-import swim from '../../../public/swim.png'
-import cicle from '../../../public/cicle.png'
-import haltere from '../../../public/haltere.png'
+import logo from '@/../public/logo.png'
+import yoga from '@/../public/yoga.png'
+import swim from '@/../public/swim.png'
+import cicle from '@/../public/cicle.png'
+import haltere from '@/../public/haltere.png'
+import PropTypes from 'prop-types'
 
 export default function Layout({ children }) {
   const router = useRouter()
@@ -81,4 +82,8 @@ export default function Layout({ children }) {
       </main>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node,
 }

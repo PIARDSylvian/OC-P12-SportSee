@@ -103,6 +103,10 @@ export default function LineChartComponent({ id }) {
   )
 }
 
+LineChartComponent.propTypes = {
+  id: PropTypes.number.isRequired,
+}
+
 LineChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

@@ -63,6 +63,11 @@ export default function RadialBarChartComponent({ score, todayScore }) {
   )
 }
 
+RadialBarChartComponent.propTypes = {
+  score: PropTypes.number.isRequired,
+  todayScore: PropTypes.number.isRequired,
+}
+
 RadialBarChart.propTypes = {
   data: PropTypes.number.isRequired,
 }

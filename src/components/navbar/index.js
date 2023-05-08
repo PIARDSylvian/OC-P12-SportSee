@@ -1,5 +1,6 @@
 import styles from '@/styles/Navbar.module.scss'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 export const StyledNav = styled.nav`
   ${(props) =>
@@ -32,4 +33,9 @@ export default function Navbar({ children, column }) {
       {children}
     </StyledNav>
   )
+}
+
+Navbar.propTypes = {
+  children: PropTypes.node,
+  column: PropTypes.bool,
 }

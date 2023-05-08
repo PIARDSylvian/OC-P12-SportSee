@@ -136,6 +136,10 @@ export default function BarChartComponent({ id }) {
   )
 }
 
+BarChartComponent.propTypes = {
+  id: PropTypes.number.isRequired,
+}
+
 BarChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
