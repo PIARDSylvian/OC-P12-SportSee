@@ -6,6 +6,13 @@ import proteins from '@/../public/proteins.png'
 import glucides from '@/../public/glucides.png'
 import PropTypes from 'prop-types'
 
+/**
+ * get card by type
+ *
+ * @param {string} type
+ * @param {number} value
+ * @returns {React.ReactElement}
+ */
 function getCardByType(type, value) {
   switch (type) {
     case 'calories':
@@ -53,6 +60,13 @@ function getCardByType(type, value) {
   }
 }
 
+/**
+ * create a card
+ *
+ * @param {{ type :string}} type
+ * @param {{value :number}} value
+ * @returns {React.ReactElement}
+ */
 export default function Card({ type, value }) {
   return <div className={styles.card}>{getCardByType(type, value)}</div>
 }
