@@ -26,7 +26,13 @@ export const StyledNav = styled.nav`
       `};
   }
 `
-
+/**
+ * create navbar
+ *
+ * @param {{children :React.ReactElement}}
+ * @param {{column :boolean}}
+ * @returns {React.ReactElement}
+ */
 export default function Navbar({ children, column }) {
   return (
     <StyledNav column={column} className={styles.nav}>
