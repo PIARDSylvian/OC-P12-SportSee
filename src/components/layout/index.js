@@ -44,32 +44,28 @@ export default function Layout({ children }) {
                 <li>
                   <Link href="/">
                     <Button>
-                      <Image src={yoga} alt="SportSee-logo" priority="false" />
+                      <Image src={yoga} alt="yoga" priority="false" />
                     </Button>
                   </Link>
                 </li>
                 <li>
                   <Link href="/">
                     <Button>
-                      <Image src={swim} alt="SportSee-logo" priority="false" />
+                      <Image src={swim} alt="swim" priority="false" />
                     </Button>
                   </Link>
                 </li>
                 <li>
                   <Link href="/">
                     <Button>
-                      <Image src={cicle} alt="SportSee-logo" priority="false" />
+                      <Image src={cicle} alt="cicle" priority="false" />
                     </Button>
                   </Link>
                 </li>
                 <li>
                   <Link href="/">
                     <Button>
-                      <Image
-                        src={haltere}
-                        alt="SportSee-logo"
-                        priority="false"
-                      />
+                      <Image src={haltere} alt="haltere" priority="false" />
                     </Button>
                   </Link>
                 </li>
