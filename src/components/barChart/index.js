@@ -12,12 +12,26 @@ import {
 import { fetcher, getApiRoute } from '@/utils'
 import PropTypes from 'prop-types'
 
+/**
+ * Create BarChartComponent with id of user
+ *
+ * @param {{id: number}}
+ * @returns {React.ReactElement}
+ */
 export default function BarChartComponent({ id }) {
   const { data, error } = useSWR(getApiRoute(id, 'activity'), fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
+  /**
+   * Render Tooltip if is active & payload length > 0
+   *
+   * @param {{active :boolean}} active
+   * @param {{active :object}} payload
+   *
+   * @returns {HTMLElement}
+   */
   const renderTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -43,14 +57,24 @@ export default function BarChartComponent({ id }) {
     return null
   }
 
+  /**
+   * Get legend
+   *
+   * @param {{legend :string}} legend
+   * @returns {string}
+   */
   const getLegend = (legend) => {
     if (legend == 'kilogram') return 'Poids (kg)'
     return 'Calories brûlées (kCal)'
   }
 
-  const renderLegend = (props) => {
-    const { payload } = props
-
+  /**
+   * Render legend
+   *
+   * @param {{payload :object}} payload
+   * @returns {React.ReactElement}
+   */
+  const renderLegend = ({ payload }) => {
     return (
       <ul
         style={{
