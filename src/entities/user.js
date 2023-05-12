@@ -1,4 +1,11 @@
+/**
+ * User Class
+ * @class
+ */
 export default class User {
+  /**
+   * @param {{id: number, userInfos :object, todayScore :number, score :number, keyData :object}}
+   */
   constructor({ id, userInfos, todayScore = 0, score = 0, keyData }) {
     this.id = id
     this.userInfos = userInfos
@@ -10,6 +17,11 @@ export default class User {
     this.lipidCount = keyData.lipidCount
   }
 
+  /**
+   * Return data
+   *
+   * @returns {object}
+   */
   data = () => {
     return {
       id: this.id,

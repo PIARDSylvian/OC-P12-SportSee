@@ -1,4 +1,11 @@
+/**
+ * Performance Class
+ * @class
+ */
 export default class Performance {
+  /**
+   * @param {{userId: number, kind :object, sessions :object}}
+   */
   constructor({ userId, kind, data }) {
     this.userId = userId
     this.kind = kind
@@ -14,6 +21,11 @@ export default class Performance {
     cardio: 'Cardio',
   }
 
+  /**
+   * Format session
+   *
+   * @returns {object}
+   */
   formatSession = () => {
     return this.value
       .sort((a, b) => {
@@ -27,6 +39,11 @@ export default class Performance {
       })
   }
 
+  /**
+   * Return data
+   *
+   * @returns {object}
+   */
   data = () => {
     return {
       userId: this.userId,
