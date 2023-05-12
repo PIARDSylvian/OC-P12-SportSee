@@ -12,12 +12,26 @@ import {
 import { fetcher, getApiRoute } from '@/utils'
 import PropTypes from 'prop-types'
 
+/**
+ * Create LineChartComponent with id of user
+ *
+ * @param {{id: number}}
+ * @returns {React.ReactElement}
+ */
 export default function LineChartComponent({ id }) {
   const { data, error } = useSWR(getApiRoute(id, 'average-sessions'), fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
+  /**
+   * Render Tooltip if is active & payload length > 0
+   *
+   * @param {{active :boolean}} active
+   * @param {{active :object}} payload
+   *
+   * @returns {HTMLElement}
+   */
   const renderTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -40,6 +54,11 @@ export default function LineChartComponent({ id }) {
     return null
   }
 
+  /**
+   * Render legend
+   *
+   * @returns {React.ReactElement}
+   */
   const renderLegend = () => {
     return (
       <p
@@ -54,6 +73,14 @@ export default function LineChartComponent({ id }) {
     )
   }
 
+  /**
+   * custom cursor effect
+   *
+   * @param {{ width :number }}
+   * @param {{ height :number }}
+   * @param {{ points :object }}
+   * @returns {React.ReactElement}
+   */
   const CustomCursor = ({ width, height, points }) => {
     return (
       <Rectangle

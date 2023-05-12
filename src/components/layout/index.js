@@ -11,6 +11,12 @@ import cicle from '@/../public/cicle.png'
 import haltere from '@/../public/haltere.png'
 import PropTypes from 'prop-types'
 
+/**
+ * create layout
+ *
+ * @param {{children :React.ReactElement}} children
+ * @returns {React.ReactElement}
+ */
 export default function Layout({ children }) {
   const router = useRouter()
   return (
