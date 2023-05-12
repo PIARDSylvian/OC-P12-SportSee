@@ -1,0 +1,41 @@
+@import 'utils/variables';
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: map-get($background-color, ternary);
+  border-radius: $border-radius;
+
+  img {
+    border-radius: $border-radius;
+    margin-right: 20px;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  .type {
+    margin-top: 0.5em;
+    color: map-get($font-color, secondary);
+    font-size: 0.8em;
+  }
+
+  .calories {
+    background-color: rgba(#ff0000, 0.1);
+  }
+
+  .proteins {
+    background-color: rgba(#4ab8ff, 0.1);
+  }
+
+  .glucides {
+    background-color: rgba(#f9ce23, 0.1);
+  }
+
+  .lipides {
+    background-color: rgba(#fd5181, 0.1);
+  }
+}

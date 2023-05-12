@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
 @import 'reset-css/sass/reset';
 @import 'utils/variables';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap');
 
 * {
   font-family: 'Roboto' !important;
@@ -31,6 +31,7 @@ a:visited {
 
     & > section {
       width: 100%;
+      min-height: calc(100% - 40px);
     }
   }
 }
