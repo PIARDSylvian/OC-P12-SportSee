@@ -6,13 +6,32 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 
+/**
+ * Create RadialBarChartComponent with id of user
+ *
+ * @param {{score: number}}
+ * @param {{todayScore: number}}
+ * @returns {React.ReactElement}
+ */
 export default function RadialBarChartComponent({ score, todayScore }) {
   const data = score ? score : todayScore
 
+  /**
+   * Render legend
+   *
+   * @returns {React.ReactElement}
+   */
   const renderLegend = () => {
     return <p style={{ padding: '1em 0 0 2em' }}>Score</p>
   }
 
+  /**
+   * Render customized label
+   *
+   * @param {{value: number}}
+   * @param {{viewBox: object}}
+   * @returns {React.ReactElement}
+   */
   const renderCustomizedLabel = ({ value, viewBox }) => {
     return (
       <g>

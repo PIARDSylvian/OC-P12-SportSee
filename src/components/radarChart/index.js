@@ -9,6 +9,12 @@ import {
 import { fetcher, getApiRoute } from '@/utils'
 import PropTypes from 'prop-types'
 
+/**
+ * Create RadarChartComponent with id of user
+ *
+ * @param {{id: number}}
+ * @returns {React.ReactElement}
+ */
 export default function RadarChartComponent({ id }) {
   const { data, error } = useSWR(getApiRoute(id, 'performance'), fetcher)
 
