@@ -22,8 +22,6 @@ BACKEND=http://$HOSTNAME:$PORT
 
 ## How to start dev server
 
-// add install
-
 ```bash
 npm install
 npm run dev
